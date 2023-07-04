@@ -1,10 +1,12 @@
 package com.guangyao.bookstore.domain.account;
 
 import com.guangyao.bookstore.domain.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 
 @Entity
 public class Account extends BaseEntity {

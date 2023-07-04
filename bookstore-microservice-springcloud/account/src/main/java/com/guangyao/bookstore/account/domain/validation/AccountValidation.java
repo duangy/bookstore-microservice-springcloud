@@ -3,11 +3,11 @@ package com.guangyao.bookstore.account.domain.validation;
 import com.guangyao.bookstore.account.domain.AccountRepository;
 import com.guangyao.bookstore.domain.account.Account;
 import com.guangyao.bookstore.domain.security.AuthenticAccount;
-import jakarta.inject.Inject;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import javax.inject.Inject;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 import java.lang.annotation.Annotation;
 import java.util.Collection;
 import java.util.function.Predicate;

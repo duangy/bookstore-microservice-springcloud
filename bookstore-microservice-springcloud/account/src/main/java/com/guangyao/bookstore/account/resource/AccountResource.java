@@ -7,14 +7,14 @@ import com.guangyao.bookstore.account.domain.validation.NotConflictAccount;
 import com.guangyao.bookstore.account.domain.validation.UniqueAccount;
 import com.guangyao.bookstore.domain.account.Account;
 import com.guangyao.bookstore.infrastructure.jaxrs.CommonResponse;
-import jakarta.inject.Inject;
-import jakarta.validation.Valid;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
+import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

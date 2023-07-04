@@ -3,10 +3,10 @@ package com.guangyao.bookstore.account.application;
 import com.guangyao.bookstore.account.domain.AccountRepository;
 import com.guangyao.bookstore.domain.account.Account;
 import com.guangyao.bookstore.infrastructure.utility.Encryption;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
-import jakarta.transaction.Transactional;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.transaction.Transactional;
 
 @Named
 @Transactional

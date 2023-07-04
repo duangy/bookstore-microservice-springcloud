@@ -5,14 +5,22 @@ eureka:
 database: mysql
 
 spring:
-  datasource:
-    schema: "classpath:db/${database}/schema.sql"
-    sql-script-encoding: UTF-8
+  application:
+    name: account
+
+  cloud:
+    config:
+      uri: http://${CONFIG_HOST:localhost}:${CONFIG_PORT:8888}
+      fail-fast: true
+      password: ${CONFIG_PASS:dev}
+      username: user
+
   jpa:
-    show-sql: false
+    show-sql: true
     hibernate:
       ddl-auto: none
     open-in-view: false
+
   resource:
     chain:
       compressed: true

@@ -1,7 +1,7 @@
 package com.guangyao.bookstore.account.domain;
 
 import com.guangyao.bookstore.domain.account.Account;
-import org.glassfish.jaxb.core.v2.model.core.ID;
+import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

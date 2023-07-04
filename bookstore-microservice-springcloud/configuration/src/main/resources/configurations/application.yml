@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/${DB_NAME:bookstore}?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=utf8
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: false
+      connection-timeout: ${DB_TIMEOUT:3000}
+      validation-timeout: ${DB_TIMEOUT:3000}
+      max-lifetime: 600000
+      maximum-pool-size: ${DB_POOL_MAX:500}
+      minimum-idle: ${DB_POOL_IDEL:1}
