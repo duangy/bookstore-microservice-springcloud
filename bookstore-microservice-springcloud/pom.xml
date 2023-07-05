@@ -18,6 +18,7 @@
         <module>infrastructure</module>
         <module>configuration</module>
         <module>warehouse</module>
+        <module>payment</module>
     </modules>
 
     <properties>
