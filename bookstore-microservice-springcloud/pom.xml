@@ -20,6 +20,7 @@
         <module>warehouse</module>
         <module>payment</module>
         <module>security</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
