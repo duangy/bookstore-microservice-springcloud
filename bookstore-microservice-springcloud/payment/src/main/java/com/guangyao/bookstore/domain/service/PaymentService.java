@@ -15,6 +15,7 @@ import javax.inject.Named;
 import javax.persistence.EntityNotFoundException;
 import java.util.Objects;
 import java.util.Timer;
+import java.util.TimerTask;
 
 @Named
 public class PaymentService {
@@ -87,13 +88,16 @@ public class PaymentService {
     }
 
     public void setupAutoThawedTrigger(Payment payment) {
-        timer.schedule(() -> {
-            synchronized (payment.getPayId().intern()) {
-                Payment currentPayment = paymentRepository.findById(payment.getId()).orElseThrow(() -> new EntityNotFoundException(
-                        payment.getId().toString()));
-                if (currentPayment.getPayState() == Payment.State.WAITING) {
-                    log.info("支付单{}当前状态为：WAITING，转变为：TIMEOUT", payment.getId());
-                    accomplishSettlement(Payment.State.TIMEOUT, payment.getPayId());
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                synchronized (payment.getPayId().intern()) {
+                    Payment currentPayment = paymentRepository.findById(payment.getId()).orElseThrow(() -> new EntityNotFoundException(
+                            payment.getId().toString()));
+                    if (currentPayment.getPayState() == Payment.State.WAITING) {
+                        log.info("支付单{}当前状态为：WAITING，转变为：TIMEOUT", payment.getId());
+                        accomplishSettlement(Payment.State.TIMEOUT, payment.getPayId());
+                    }
                 }
             }
         }, payment.getExpires());
